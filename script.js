@@ -26,9 +26,12 @@ const stopButton = document.getElementsByClassName("btn-info")[0];
 
 const timerInterval = setInterval(function () {
   count++;
-  timer.textContent = count;
+  timer.innerText = count;
 
   sessionStorage.setItem("count", count);
 }, 1000);
 
 sessionStorage.setItem("count", count);
+function stopTimer() {
+  clearInterval(timerInterval);
+}
